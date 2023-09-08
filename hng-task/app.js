@@ -13,12 +13,12 @@ app.get('/api', (req, res) => {
 
   // Construct the JSON response
   const jsonResponse = {
-    "slack_name": slackName,
+    "slack_name": "Johnkennedy",
     "current_day": currentDay,
     "utc_time": utcTime,
-    "track": track,
-    "github_file_url": "https://github.com/username/repo/blob/main/file_name.ext",
-    "github_repo_url": "https://github.com/username/repo",
+    "track": "backend",
+    "github_file_url": "https://github.com/mathjken/hng-bk-task-1/blob/main/hng-task/app.js",
+    "github_repo_url": "https://github.com/mathjken/hng-bk-task-1",
     "status_code": 200
   };
 

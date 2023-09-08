@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 app.get('/api', (req, res) => {
   const slackName = req.query.slack_name || 'example_name';
   const track = req.query.track || 'backend';
-  const currentDay = new Date().toLocaleDateString('en-GB', { timeZone: 'Europe/London' });
+  const currentDay = new Date().toLocaleDateString('en-GB', { weekday: 'long' });
   const utcTime = new Date().toISOString();
 
   // Construct the JSON response

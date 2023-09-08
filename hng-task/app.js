@@ -8,14 +8,18 @@ const PORT = process.env.PORT || 3000;
 app.get('/api', (req, res) => {
   const slackName = req.query.slack_name || 'example_name';
   const track = req.query.track || 'backend';
-  const currentDay = new Date().toLocaleDateString('en-GB', { weekday: 'long' });
-  const utcTime = new Date().toISOString();
+
+  // Create a new Date object with UTC+1 timezone (West African Time, WAT)
+  const currentTime = new Date().toLocaleString('en-US', { timeZone: 'Africa/Lagos', timeZoneName: 'short' });
+
+  // Get the current UTC time and format it without milliseconds
+  const utcTime = new Date().toISOString().replace(/\.\d{3}$/, 'Z');
 
   // Construct the JSON response
   const jsonResponse = {
     "slack_name": "Johnkennedy",
+    "current_day": new Date().toLocaleDateString('en-US', { timeZone: 'Africa/Lagos', weekday: 'long' }),
     "utc_time": utcTime,
-    "current_day": currentDay,
     "track": "backend",
     "github_file_url": "https://github.com/mathjken/hng-bk-task-1/blob/main/hng-task/app.js",
     "github_repo_url": "https://github.com/mathjken/hng-bk-task-1",

@@ -14,8 +14,8 @@ app.get('/api', (req, res) => {
   // Construct the JSON response
   const jsonResponse = {
     "slack_name": "Johnkennedy",
-    "current_day": currentDay,
     "utc_time": utcTime,
+    "current_day": currentDay,
     "track": "backend",
     "github_file_url": "https://github.com/mathjken/hng-bk-task-1/blob/main/hng-task/app.js",
     "github_repo_url": "https://github.com/mathjken/hng-bk-task-1",

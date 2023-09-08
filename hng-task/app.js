@@ -13,7 +13,7 @@ app.get('/api', (req, res) => {
   const currentTime = new Date().toLocaleString('en-US', { timeZone: 'Africa/Lagos', timeZoneName: 'short' });
 
   // Get the current UTC time and format it without milliseconds
-  const utcTime = new Date().toISOString().replace(/\.\d{3}$/, 'Z');
+  const utcTime = new Date().toISOString().split('.')[0] +'Z';
 
   // Construct the JSON response
   const jsonResponse = {
